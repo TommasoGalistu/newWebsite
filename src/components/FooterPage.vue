@@ -9,7 +9,13 @@ export default {
 </script>
 <template>
   <footer>
-    <h2>footer</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h2>footer</h2>
+        </div>
+      </div>
+    </div>
   </footer>
 </template>
 <style lang='scss' scoped>

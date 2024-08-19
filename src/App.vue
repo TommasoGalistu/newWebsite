@@ -15,9 +15,7 @@ export default {
 </script>
 <template>
   <HeaderPage />
-  <main>
-    <h3>main</h3>
-  </main>
+  <router-view></router-view>
   <FooterPage />
 </template>
 <style lang='scss'>

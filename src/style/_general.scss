@@ -3,3 +3,14 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+#app {
+  width: 100%;
+  min-height: 100vh;
+  background-color: black;
+  color: white;
+}
+
+li {
+  list-style-type: none;
+}
