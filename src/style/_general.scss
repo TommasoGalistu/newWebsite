@@ -3,12 +3,24 @@
   margin: 0;
   box-sizing: border-box;
 }
-
+html,
+body {
+  scroll-behavior: smooth; /* Scorrimento fluido */
+}
 #app {
   width: 100%;
   min-height: 100vh;
   background-color: black;
   color: white;
+}
+.sfondo {
+  width: 100%;
+  scroll-snap-type: y mandatory; /* Abilita lo scroll snap verticale */
+  overflow-y: scroll; /* Assicurati che il contenitore sia scrollabile */
+}
+.container {
+  scroll-snap-align: start; /* La sezione deve allinearsi all'inizio */
+  min-height: 100vh;
 }
 
 li {
