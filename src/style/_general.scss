@@ -12,15 +12,10 @@ body {
   min-height: 100vh;
   background-color: black;
   color: white;
+  position: relative;
 }
 .sfondo {
   width: 100%;
-  scroll-snap-type: y mandatory; /* Abilita lo scroll snap verticale */
-  overflow-y: scroll; /* Assicurati che il contenitore sia scrollabile */
-}
-.container {
-  scroll-snap-align: start; /* La sezione deve allinearsi all'inizio */
-  min-height: 100vh;
 }
 
 li {
@@ -28,15 +23,11 @@ li {
 }
 
 .buble {
-  pointer-events: none;
   position: absolute;
-  height: 50px;
-  width: 50px;
   border-radius: 50%;
-  top: 70px;
-  left: 100px;
+  z-index: 100;
   background: linear-gradient(45deg, aqua, rgba(114, 152, 250, 0.8));
-  animation: dissolve 0.7s ease-in-out forwards;
+  animation: dissolve 1.2s ease-in-out forwards;
 
   @keyframes dissolve {
     0% {
@@ -44,15 +35,7 @@ li {
     }
     100% {
       opacity: 0;
+      display: none;
     }
   }
-}
-.custom-cursor {
-  position: absolute;
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  top: 70px;
-  left: 100px;
-  background: linear-gradient(45deg, aqua, rgba(114, 152, 250, 0.8));
 }

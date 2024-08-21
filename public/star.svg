@@ -1,0 +1,18 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="display: block; margin: auto;">
+  <defs>
+    <!-- Glow Gradient -->
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:yellow; stop-opacity:1" />
+      <stop offset="50%" style="stop-color:orange; stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:black; stop-opacity:0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Scattered Star Glows -->
+  <!-- Top left glow -->
+  <circle cx="70" cy="50" r="10" fill="url(#glow)" />
+  <!-- Bottom right glow -->
+  <circle cx="130" cy="150" r="10" fill="url(#glow)" />
+  <!-- Right glow -->
+  <circle cx="150" cy="80" r="10" fill="url(#glow)" />
+</svg>

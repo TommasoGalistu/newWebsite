@@ -41,6 +41,9 @@ header {
   justify-content: space-between;
   align-items: center;
   position: fixed;
+  top: 0;
+  left: 0;
+  background-color: red;
 }
 .contLogo {
   position: relative;

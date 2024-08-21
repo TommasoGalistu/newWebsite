@@ -57,8 +57,8 @@ export default {
       let y = e.pageY;
       circle.style.left = x + "px";
       circle.style.top = y + "px";
-      circle.style.width = "40px";
-      circle.style.height = "40px";
+      circle.style.width = "20px";
+      circle.style.height = "20px";
       body.appendChild(circle);
     },
   },
@@ -69,7 +69,6 @@ export default {
   mounted() {
     this.initialize();
     document.body.addEventListener("mousemove", this.createBuble);
-    document.window.addEventListener("scroll", this.createBuble);
   },
   beforeDestroy() {
     window.removeEventListener("resize", this.updateScreenSize);
@@ -78,12 +77,14 @@ export default {
 };
 </script>
 <template>
-  <div :style="ballStyle" class="palla"></div>
-  <div ref="customCursor" class="custom-cursor"></div>
-
   <div v-if="isLoaded">
+    <div :style="ballStyle" class="palla"></div>
+    <div style="top: 15%; left: 10%" class="glow"></div>
+    <div style="top: 50%; left: 25%" class="glow"></div>
+    <div style="top: 15%; left: 75%" class="glow"></div>
+    <div style="top: 70%; left: 75%" class="glow"></div>
     <HeaderPage />
-    <router-view class="effetto"> </router-view>
+    <router-view> </router-view>
     <FooterPage />
   </div>
   <div v-else class="relodedPage">reloded page</div>
@@ -107,5 +108,32 @@ export default {
   border-radius: 50%;
   box-shadow: inset -20px -20px 50px rgba(0, 0, 0, 0.3),
     20px 20px 50px rgba(0, 0, 0, 0.3);
+  z-index: 0;
+}
+.glow {
+  width: 20px; /* Adjust size as needed */
+  height: 20px; /* Adjust size as needed */
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 0, 1) 0%,
+    rgba(255, 165, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  border-radius: 50%;
+  position: fixed; /* Position it wherever you need */
+  animation: pulsate 2s infinite ease-in-out;
+  z-index: 0;
+}
+
+@keyframes pulsate {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
 }
 </style>

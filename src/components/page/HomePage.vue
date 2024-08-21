@@ -93,6 +93,7 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  z-index: 10;
   p {
     font-size: 3rem;
     padding-top: 5rem;
@@ -108,6 +109,7 @@ h1 {
   background-color: rgba(107, 106, 194, 0.5);
   border-radius: 10px;
   padding: 1rem;
+  cursor: pointer;
   p {
     color: rgb(175, 166, 197);
   }
@@ -116,8 +118,15 @@ h1 {
   background-color: rgba(107, 106, 194, 0.5);
   border-radius: 10px;
   padding: 1rem;
+
   p {
     color: rgb(175, 166, 197);
   }
+}
+.tcard,
+.cardNoFlex {
+  position: relative;
+  cursor: pointer;
+  z-index: 101;
 }
 </style>
