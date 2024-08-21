@@ -49,6 +49,18 @@ export default {
       window.addEventListener("resize", this.updateScreenSize);
       this.animate();
     },
+    createBuble(e) {
+      let body = document.querySelector("body");
+      let circle = document.createElement("span");
+      circle.classList.add("buble");
+      let x = e.pageX;
+      let y = e.pageY;
+      circle.style.left = x + "px";
+      circle.style.top = y + "px";
+      circle.style.width = "40px";
+      circle.style.height = "40px";
+      body.appendChild(circle);
+    },
   },
   components: {
     HeaderPage,
@@ -56,18 +68,22 @@ export default {
   },
   mounted() {
     this.initialize();
+    document.body.addEventListener("mousemove", this.createBuble);
+    document.window.addEventListener("scroll", this.createBuble);
   },
   beforeDestroy() {
     window.removeEventListener("resize", this.updateScreenSize);
+    document.body.removeEventListener("mousemove", this.createBuble);
   },
 };
 </script>
 <template>
   <div :style="ballStyle" class="palla"></div>
+  <div ref="customCursor" class="custom-cursor"></div>
 
   <div v-if="isLoaded">
     <HeaderPage />
-    <router-view></router-view>
+    <router-view class="effetto"> </router-view>
     <FooterPage />
   </div>
   <div v-else class="relodedPage">reloded page</div>

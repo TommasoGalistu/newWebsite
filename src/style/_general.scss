@@ -26,3 +26,33 @@ body {
 li {
   list-style-type: none;
 }
+
+.buble {
+  pointer-events: none;
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  top: 70px;
+  left: 100px;
+  background: linear-gradient(45deg, aqua, rgba(114, 152, 250, 0.8));
+  animation: dissolve 0.7s ease-in-out forwards;
+
+  @keyframes dissolve {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}
+.custom-cursor {
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  top: 70px;
+  left: 100px;
+  background: linear-gradient(45deg, aqua, rgba(114, 152, 250, 0.8));
+}
